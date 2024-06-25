@@ -1,0 +1,35 @@
+﻿{
+	"name": "不要按测试联机",
+	"packageName": "5DB7D0A44587A2ABC535B4876830B996",
+	"foldername": "petparty",
+	"mainScene": 1,
+	"scenePublic": 1,
+	"intro": "1.26性能测试",
+	"notes": "1.26性能测试",
+	"editorVersion": "v0.29.0.2",
+	"parentGameIdentity": "",
+	"parentGameId": "",
+	"extra": "{\"attribute\":2,\"IsHorizontal\":true,\"useAvatar\":0}",
+	"devEnv": 4,
+	"needToMgs": 0,
+	"attribute": 2,
+	"autoSubmitAudit": false,
+	"ignore": [
+		"game.desc",
+		"Asset_Data_List"
+	],
+	"files": [
+		{
+			"type": "Game_Thumbnail",
+			"path": "Pictures/Game_Thumbnail.jpg"
+		},
+		{
+			"type": "GameSetting",
+			"path": "Config/GameSetting.ini"
+		},
+		{
+			"type": "Asset_Data_List",
+			"path": "Asset_Data_List"
+		}
+	]
+}

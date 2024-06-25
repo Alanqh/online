@@ -1,0 +1,61 @@
+import { ConfigBase, IElementBase } from "./ConfigBase";
+const EXCELDATA:Array<Array<any>> = [["ID","Name","speed","walkSpeed","patrolPos","atk","AtkDistance","atkAni","idle","injure","chess","walk","appearedEffect","Effect","dead","Music","atkMusic","struckMusic","Impulse","ImpulseZ","ImpulseTime","Impulse2","nightEffect","scale","areaId"],["","Language","","","","","","","","","","","","","","","","","","","","","","",""],[1,"Npc_Monster_1",250,200,[new mw.Vector(-1735,1285,20),new mw.Vector(-4135,1285,20)],10,200,38,2,4,[8],6,4,13,25,7,32,25,1000,0,1,50,[7,8],new mw.Vector(1.5,1.5,1.5),1],[2,"Npc_Monster_2",250,200,[new mw.Vector(-5260,4150,20),new mw.Vector(-5260,5780,20)],10,200,38,2,4,[8],6,4,13,25,7,32,25,1000,0,1,51,[7,8],new mw.Vector(1.5,1.5,1.5),2],[3,"Npc_Monster_3",250,200,[new mw.Vector(-1790,-2805,20),new mw.Vector(-1790,-895,20)],10,200,39,2,4,[8],6,4,13,25,7,32,25,1000,0,1,52,[7,8],new mw.Vector(1.5,1.5,1.5),3],[4,"Npc_Monster_4",250,200,[new mw.Vector(-10,2900,20),new mw.Vector(-10,4690,20)],10,200,39,2,4,[8],6,4,13,25,7,32,25,1000,0,1,53,[7,8],new mw.Vector(1.5,1.5,1.5),4],[5,"Npc_Monster_5",250,200,[new mw.Vector(-1105,-1095,20),new mw.Vector(2925,-1095,20)],10,200,38,2,4,[8],6,4,13,25,7,32,25,1000,0,1,54,[7,8],new mw.Vector(1.5,1.5,1.5),5]];
+export interface ISceneUnitElement extends IElementBase{
+ 	/**ID*/
+	ID:number
+	/**数据*/
+	Name:string
+	/**速度*/
+	speed:number
+	/**巡逻速度*/
+	walkSpeed:number
+	/**巡逻点位*/
+	patrolPos:mw.Vector[]
+	/**攻击力*/
+	atk:number
+	/**攻击距离
+距离玩家X开始攻击*/
+	AtkDistance:number
+	/**NPC攻击动画ID(对应NPCAnimation表)*/
+	atkAni:number
+	/**NPC待机动画ID*/
+	idle:number
+	/**NPC被僵直/击退动画ID*/
+	injure:number
+	/**追击动画ID*/
+	chess:Array<number>
+	/**巡逻动画*/
+	walk:number
+	/**npc出现特效*/
+	appearedEffect:number
+	/**白天死亡特效*/
+	Effect:number
+	/**白天死亡动作*/
+	dead:number
+	/**追击音效（音效表id）*/
+	Music:number
+	/**攻击音效（音效表id）*/
+	atkMusic:number
+	/**受击音效（音效表id）*/
+	struckMusic:number
+	/**击退冲量大小*/
+	Impulse:number
+	/**向上击飞（填表示击飞）*/
+	ImpulseZ:number
+	/**冲量时间*/
+	ImpulseTime:number
+	/**击退玩家冲量*/
+	Impulse2:number
+	/**夜晚特效*/
+	nightEffect:Array<number>
+	/**npc外观缩放*/
+	scale:mw.Vector
+	/**NPC所属区域表ID*/
+	areaId:number
+ } 
+export class SceneUnitConfig extends ConfigBase<ISceneUnitElement>{
+	constructor(){
+		super(EXCELDATA);
+	}
+
+}

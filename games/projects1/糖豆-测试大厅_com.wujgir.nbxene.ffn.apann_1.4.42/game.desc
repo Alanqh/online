@@ -1,0 +1,35 @@
+﻿{
+	"name": "糖豆-测试大厅",
+	"packageName": "229E3B22402655A1D10E5890B1EFCC39",
+	"intro": "测试3",
+	"notes": "测试3",
+	"editorVersion": "v0.28.0.0",
+	"parentGameIdentity": "",
+	"parentGameId": "",
+	"extra": "{\"attribute\":2,\"IsHorizontal\":true,\"useAvatar\":0}",
+	"devEnv": 4,
+	"needToMgs": 0,
+	"attribute": 2,
+	"autoSubmitAudit": false,
+	"ignore": [
+		"game.desc",
+		"Asset_Data_List"
+	],
+	"files": [
+		{
+			"type": "Game_Thumbnail",
+			"path": "Pictures/Game_Thumbnail.jpg"
+		},
+		{
+			"type": "GameSetting",
+			"path": "Config/GameSetting.ini"
+		},
+		{
+			"type": "Asset_Data_List",
+			"path": "Asset_Data_List"
+		}
+	],
+	"foldername": "LV10",
+	"mainScene": 0,
+	"scenePublic": 0
+}

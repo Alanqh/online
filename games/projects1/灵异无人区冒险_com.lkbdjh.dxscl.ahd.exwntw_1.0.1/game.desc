@@ -1,0 +1,32 @@
+﻿{
+	"name": "地狱机关：逃离生存之谜",
+	"packageName": "8FAACC3C4D7F559E9C6D4A9B46601648",
+	"intro": "更新关卡 名称",
+	"notes": "更新关卡 名称",
+	"editorVersion": "v0.27.0.3",
+	"parentGameIdentity": "",
+	"parentGameId": "",
+	"extra": "{\"attribute\":2,\"IsHorizontal\":true,\"useAvatar\":0}",
+	"devEnv": 4,
+	"needToMgs": 0,
+	"attribute": 2,
+	"autoSubmitAudit": false,
+	"ignore": [
+		"game.desc",
+		"Asset_Data_List"
+	],
+	"files": [
+		{
+			"type": "Game_Thumbnail",
+			"path": "Pictures/Game_Thumbnail.jpg"
+		},
+		{
+			"type": "GameSetting",
+			"path": "Config/GameSetting.ini"
+		},
+		{
+			"type": "Asset_Data_List",
+			"path": "Asset_Data_List"
+		}
+	]
+}

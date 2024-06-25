@@ -1,0 +1,92 @@
+import { ConfigBase, IElementBase } from "./ConfigBase";
+const EXCELDATA:Array<Array<any>> = [["id","backup","level0","level1","level2","level3","level4","level5","level6","level7","level8","level9","level10","level11","level12","level13","level14","level15","level16","level17","level18","level19","level20","level21","level22","level23","level24","level25","level26","level27","level28","level29","level30","level31","level32","level33","level34","level35","level36"],["","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","",""],[1,"手枪",null,[[1,110]],[[2,330]],[[1,130]],[[3,8]],[[1,140]],[[4,1.6]],[[1,160]],[[2,310]],[[1,170]],[[3,9]],[[1,190]],[[4,1.85]],[[1,200]],[[2,290]],[[1,220]],[[3,10]],[[1,230]],[[4,1.95]],[[1,250]],[[2,270]],[[1,260]],[[3,11]],[[1,280]],[[4,2.1]],[[1,290]],[[2,260]],[[1,300]],[[3,12]],[[1,320]],[[4,2.35]],[[1,350]],[[2,220]],[[1,400]],[[3,16]],[[1,500]],[[4,2.6]]],[2,"霰弹枪",null,[[1,220]],[[2,1200]],[[1,260]],[[3,7]],[[1,280]],[[4,1.6]],[[1,320]],[[2,1100]],[[1,340]],[[3,8]],[[1,380]],[[4,1.85]],[[1,400]],[[2,1000]],[[1,440]],[[3,9]],[[1,460]],[[4,1.95]],[[1,500]],[[2,900]],[[1,520]],[[3,10]],[[1,560]],[[4,2.1]],[[1,580]],[[2,850]],[[1,600]],[[3,11]],[[1,640]],[[4,2.35]],[[1,700]],[[2,650]],[[1,800]],[[3,15]],[[1,1000]],[[4,2.6]]],[3,"机枪",null,[[1,99]],[[2,57]],[[1,117]],[[3,39]],[[1,126]],[[4,1.6]],[[1,144]],[[2,53]],[[1,153]],[[3,41]],[[1,171]],[[4,1.85]],[[1,180]],[[2,49]],[[1,198]],[[3,43]],[[1,207]],[[4,1.95]],[[1,225]],[[2,43]],[[1,234]],[[3,45]],[[1,252]],[[4,2.1]],[[1,261]],[[2,40]],[[1,270]],[[3,47]],[[1,288]],[[4,2.35]],[[1,315]],[[2,30]],[[1,360]],[[3,52]],[[1,450]],[[4,2.6]]],[4,"步枪",null,[[1,132]],[[2,135]],[[1,156]],[[3,26]],[[1,168]],[[4,1.6]],[[1,192]],[[2,125]],[[1,204]],[[3,28]],[[1,228]],[[4,1.85]],[[1,240]],[[2,115]],[[1,264]],[[3,30]],[[1,276]],[[4,1.95]],[[1,300]],[[2,105]],[[1,312]],[[3,32]],[[1,336]],[[4,2.1]],[[1,348]],[[2,100]],[[1,360]],[[3,34]],[[1,384]],[[4,2.35]],[[1,420]],[[2,80]],[[1,480]],[[3,38]],[[1,600]],[[4,2.6]]],[5,"球棒",null,[[1,330]],[[1,390]],[[1,420]],[[4,1.6]],[[1,480]],[[1,510]],[[1,570]],[[4,1.85]],[[1,600]],[[1,660]],[[1,690]],[[4,1.95]],[[1,750]],[[1,780]],[[1,840]],[[4,2.1]],[[1,870]],[[1,900]],[[1,960]],[[4,2.35]],[[1,1050]],[[1,1200]],[[1,1500]],[[4,2.6]],null,null,null,null,null,null,null,null,null,null,null,null]];
+export interface IItemLevelPropertyElement extends IElementBase{
+ 	/**id*/
+	id:number
+	/**备注：（多行两列，第一列是属性，第二列是值）
+1.威力
+2.射速
+3.弹匣
+4.爆头伤害系数*/
+	backup:string
+	/**默认读取本身的配置*/
+	level0:Array<Array<number>>
+	/**undefined*/
+	level1:Array<Array<number>>
+	/**undefined*/
+	level2:Array<Array<number>>
+	/**undefined*/
+	level3:Array<Array<number>>
+	/**undefined*/
+	level4:Array<Array<number>>
+	/**undefined*/
+	level5:Array<Array<number>>
+	/**undefined*/
+	level6:Array<Array<number>>
+	/**undefined*/
+	level7:Array<Array<number>>
+	/**undefined*/
+	level8:Array<Array<number>>
+	/**undefined*/
+	level9:Array<Array<number>>
+	/**undefined*/
+	level10:Array<Array<number>>
+	/**undefined*/
+	level11:Array<Array<number>>
+	/**undefined*/
+	level12:Array<Array<number>>
+	/**undefined*/
+	level13:Array<Array<number>>
+	/**undefined*/
+	level14:Array<Array<number>>
+	/**undefined*/
+	level15:Array<Array<number>>
+	/**undefined*/
+	level16:Array<Array<number>>
+	/**undefined*/
+	level17:Array<Array<number>>
+	/**undefined*/
+	level18:Array<Array<number>>
+	/**undefined*/
+	level19:Array<Array<number>>
+	/**undefined*/
+	level20:Array<Array<number>>
+	/**undefined*/
+	level21:Array<Array<number>>
+	/**undefined*/
+	level22:Array<Array<number>>
+	/**undefined*/
+	level23:Array<Array<number>>
+	/**undefined*/
+	level24:Array<Array<number>>
+	/**undefined*/
+	level25:Array<Array<number>>
+	/**undefined*/
+	level26:Array<Array<number>>
+	/**undefined*/
+	level27:Array<Array<number>>
+	/**undefined*/
+	level28:Array<Array<number>>
+	/**undefined*/
+	level29:Array<Array<number>>
+	/**undefined*/
+	level30:Array<Array<number>>
+	/**undefined*/
+	level31:Array<Array<number>>
+	/**undefined*/
+	level32:Array<Array<number>>
+	/**undefined*/
+	level33:Array<Array<number>>
+	/**undefined*/
+	level34:Array<Array<number>>
+	/**undefined*/
+	level35:Array<Array<number>>
+	/**undefined*/
+	level36:Array<Array<number>>
+ } 
+export class ItemLevelPropertyConfig extends ConfigBase<IItemLevelPropertyElement>{
+	constructor(){
+		super(EXCELDATA);
+	}
+
+}

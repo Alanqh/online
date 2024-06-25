@@ -1,0 +1,35 @@
+﻿{
+	"name": "恐怖乐园（联机恐怖）-233派对",
+	"packageName": "9E3D7C93498F06DCFA6C628D784B85EA",
+	"foldername": "1002_shool",
+	"mainScene": 0,
+	"scenePublic": 0,
+	"intro": "111",
+	"notes": "111",
+	"editorVersion": "v0.34.0.1",
+	"parentGameIdentity": "",
+	"parentGameId": "",
+	"extra": "{\"attribute\":2,\"IsHorizontal\":true,\"useAvatar\":1}",
+	"devEnv": 4,
+	"needToMgs": 0,
+	"attribute": 2,
+	"autoSubmitAudit": false,
+	"ignore": [
+		"game.desc",
+		"Asset_Data_List"
+	],
+	"files": [
+		{
+			"type": "Game_Thumbnail",
+			"path": "Pictures/Game_Thumbnail.jpg"
+		},
+		{
+			"type": "GameSetting",
+			"path": "Config/GameSetting.ini"
+		},
+		{
+			"type": "Asset_Data_List",
+			"path": "Asset_Data_List"
+		}
+	]
+}

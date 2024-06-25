@@ -1,0 +1,73 @@
+import { ConfigBase, IElementBase } from "./ConfigBase";
+const EXCELDATA:Array<Array<any>> = [["id","content","name","type","guid","isPrefab","detail","detailContent","rarity","pos","rot","scale","icon","title","titleContent","titleType","titleColor","giftType","rarityGlobal","itemScores"],["","","Language","","","","Language","","","","","","","Language","","","","","",""],[10001,"篮球","Decoration_name_10001",1,"84133",0,"Decoration_detail_10001","小黑子必备",4,new mw.Vector(0,0,6),new mw.Vector(0,0,0),new mw.Vector(0.6,0.6,0.6),"230951",null,null,0,null,1,30001,8],[10002,"樱花狐","Decoration_name_10002",1,"23512",0,"Decoration_detail_10002","保护小宠物平平安安",4,new mw.Vector(0,0,0),new mw.Vector(0,0,180),new mw.Vector(0.8,0.8,0.8),"230947",null,null,0,null,1,30001,14],[10003,"小熊猫","Decoration_name_10003",1,"23460",0,"Decoration_detail_10003","光彩夺目的明星宠物",4,new mw.Vector(0,0,0),new mw.Vector(0,0,180),new mw.Vector(0.4,0.4,0.4),"230950",null,null,0,null,1,30001,12],[10004,"神秘宝箱","Decoration_name_10004",1,"141901",0,"Decoration_detail_10004","藏着什么样的宝物？",3,new mw.Vector(0,0,0.5),new mw.Vector(0,0,180),new mw.Vector(0.25,0.25,0.25),"230953",null,null,0,null,1,30002,20],[10005,"吸血鬼之墓","Decoration_name_10005",1,"EA41B90A4D76F4B607AD8DBA1D4B078C",1,"Decoration_detail_10005","在半夜偷偷爬出来",2,new mw.Vector(0,0,0),new mw.Vector(0,0,0),new mw.Vector(1,1,1),"230955",null,null,0,null,1,30003,23],[20001,"尖叫鸡","Decoration_name_20001",2,"1C1288B54DF310F3335918B9143C8D99",1,"Decoration_detail_20001","小黑子必备",4,new mw.Vector(0,0,0),new mw.Vector(0,0,0),new mw.Vector(1,1,1),"230949",null,null,0,null,1,30001,9],[20002,"圣诞礼物","Decoration_name_20002",2,"A37CC41F4F8649832B8FC9B4AA9C2DF5",1,"Decoration_detail_20002","随时随地圣诞快乐",4,new mw.Vector(0,0,0),new mw.Vector(0,0,0),new mw.Vector(1,1,1),"230957",null,null,0,null,1,30001,12],[20003,"回旋镖","Decoration_name_20003",2,"590FFAD54BDB9D1E26136BBEE552CD8C",1,"Decoration_detail_20003","成为忍者大师",4,new mw.Vector(0,0,0),new mw.Vector(0,0,0),new mw.Vector(1,1,1),"230948",null,null,0,null,1,30001,6],[20004,"暗夜之翼","Decoration_name_20004",2,"135837",0,"Decoration_detail_20004","黑夜里最优雅的存在",3,new mw.Vector(0,0,0),new mw.Vector(70,0,0),new mw.Vector(0.75,0.75,0.75),"230956",null,null,0,null,1,30002,22],[20005,"恶魔之翼","Decoration_name_20005",2,"223877",0,"Decoration_detail_20005","恶魔化身特有的翅膀",2,new mw.Vector(0,5,-2),new mw.Vector(80,0,0),new mw.Vector(1.25,1.25,1.25),"230958",null,null,0,null,1,30003,31],[30001,"雪花","Decoration_name_30001",3,"145504",0,"Decoration_detail_30001","唤醒冬日的记忆",4,new mw.Vector(0,0,0),new mw.Vector(0,0,0),new mw.Vector(1,1,1),"148831",null,null,0,null,1,30001,6],[30002,"螺丝","Decoration_name_30002",3,"145492",0,"Decoration_detail_30002","伪装成机械宠物",4,new mw.Vector(0,0,0),new mw.Vector(0,0,0),new mw.Vector(1,1,1),"148838",null,null,0,null,1,30001,5],[30003,"泡泡","Decoration_name_30003",3,"145512",0,"Decoration_detail_30003","唤醒夏日的记忆",3,new mw.Vector(0,0,0),new mw.Vector(0,0,0),new mw.Vector(1,1,1),"148843",null,null,0,null,1,30002,16],[30004,"烟花","Decoration_name_30004",3,"145508",0,"Decoration_detail_30004","向所有人展示你的热情",2,new mw.Vector(0,0,0),new mw.Vector(0,0,0),new mw.Vector(1,1,1),"148836",null,null,0,null,1,30003,24],[40001,"流光精灵","Decoration_name_40001",4,"113916",0,"Decoration_detail_40001","正在分析目标数据...",3,new mw.Vector(0,0,4),new mw.Vector(0,0,0),new mw.Vector(0.5,1,0.7),"230952",null,null,0,null,1,30002,22],[40002,"恶魔火焰","Decoration_name_40002",4,"13598",0,"Decoration_detail_40002","感觉血液在燃烧",2,new mw.Vector(0,0,-3),new mw.Vector(0,0,0),new mw.Vector(0.75,0.75,0.75),"230954",null,null,0,null,1,30003,32],[50001,"可爱的","Decoration_name_50001",5,null,0,"Decoration_name_50001","可爱的",4,null,null,null,"240193","Decoration_title_50001","可爱的",0,"FFFFFFFF",1,30001,10],[50002,"喵喵叫的","Decoration_name_50002",5,null,0,"Decoration_name_50002","喵喵叫的",4,null,null,null,"240193","Decoration_title_50002","喵喵叫的",0,"FFFFFFFF",1,30001,14],[50003,"猫王","Decoration_name_50003",5,null,0,"Decoration_name_50003","猫王",3,null,null,null,"240193","Decoration_title_50003","猫王",0,"C588E4FF",1,30002,15],[50004,"跑酷高手","Decoration_name_50004",5,null,0,"Decoration_name_50004","跑酷高手",2,null,null,null,"240193","Decoration_title_50004","，跑酷高手",1,"FFB153FF",1,30003,29]];
+export interface IDecorationElement extends IElementBase{
+ 	/**序号
+10000背部挂件
+20000肩部挂件
+30000拖尾
+40000特效挂件
+50000头衔*/
+	id:number
+	/**名称策划看*/
+	content:string
+	/**装扮名称*/
+	name:string
+	/**装扮类型
+1：背部
+2：肩部
+3：拖尾
+4：特效
+5：头衔*/
+	type:number
+	/**挂件的Guid
+（prefab或资源库）*/
+	guid:string
+	/**是否是prefab
+（0否，1是）*/
+	isPrefab:number
+	/**装扮文本描述*/
+	detail:string
+	/**装扮文本描述策划看*/
+	detailContent:string
+	/**挂件稀有度
+0：神话（金）
+1：传说（橙）
+2：史诗（紫）
+3：稀有（蓝）
+4：普通（灰）*/
+	rarity:number
+	/**挂件偏移*/
+	pos:mw.Vector
+	/**挂件旋转*/
+	rot:mw.Vector
+	/**挂件缩放
+（世界缩放）*/
+	scale:mw.Vector
+	/**icon图标的资源库guid*/
+	icon:string
+	/**头衔类装扮的文本*/
+	title:string
+	/**头衔类装扮文本策划看*/
+	titleContent:string
+	/**头衔类别
+0：前置于玩家id
+1：后置于玩家id*/
+	titleType:number
+	/**头衔颜色
+（颜色码）*/
+	titleColor:string
+	/**是否为默认解锁
+0：是
+1：否*/
+	giftType:number
+	/**稀有度ui在global表里的key*/
+	rarityGlobal:number
+	/**时尚分数*/
+	itemScores:number
+ } 
+export class DecorationConfig extends ConfigBase<IDecorationElement>{
+	constructor(){
+		super(EXCELDATA);
+	}
+
+}

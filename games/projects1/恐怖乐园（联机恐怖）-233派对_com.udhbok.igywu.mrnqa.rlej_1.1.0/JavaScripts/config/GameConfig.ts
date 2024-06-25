@@ -1,0 +1,152 @@
+import {ConfigBase, IElementBase} from "./ConfigBase";
+import {AchievementLevelConfig} from "./AchievementLevel";
+import {AchievementConfig} from "./Achievement";
+import {ActiveValueConfig} from "./ActiveValue";
+import {AlternateConfig} from "./Alternate";
+import {AvatarFrameConfig} from "./AvatarFrame";
+import {BuffExConfig} from "./BuffEx";
+import {BuffConfig} from "./Buff";
+import {BulletConfig} from "./Bullet";
+import {CheckInConfig} from "./CheckIn";
+import {DifficultyConfig} from "./Difficulty";
+import {DropItemConfig} from "./DropItem";
+import {FindConfig} from "./Find";
+import {GameThemeConfig} from "./GameTheme";
+import {GhostAttackConfig} from "./GhostAttack";
+import {GhostBossDifficultConfig} from "./GhostBossDifficult";
+import {GhostDayConfig} from "./GhostDay";
+import {GhostFragmentConfig} from "./GhostFragment";
+import {GhostGraphicConfig} from "./GhostGraphic";
+import {GhostGraphConfig} from "./GhostGraph";
+import {GhostInstanceConfig} from "./GhostInstance";
+import {GhostConfig} from "./Ghost";
+import {GiftConfig} from "./Gift";
+import {GlobalConfig} from "./Global";
+import {GuideTalkConfig} from "./GuideTalk";
+import {happyCoinConfig} from "./happyCoin";
+import {HomeWeatherConfig} from "./HomeWeather";
+import {HotWeaponConfig} from "./HotWeapon";
+import {InteractConfig} from "./Interact";
+import {ItemLevelPropertyConfig} from "./ItemLevelProperty";
+import {ItemLevelConfig} from "./ItemLevel";
+import {ItemMaterialConfig} from "./ItemMaterial";
+import {ItemNeedsConfig} from "./ItemNeeds";
+import {ItemQualityConfig} from "./ItemQuality";
+import {ItemConfig} from "./Item";
+import {JsonConfig} from "./Json";
+import {LanguageConfig} from "./Language";
+import {MeleeWeaponConfig} from "./MeleeWeapon";
+import {MissionConfig} from "./Mission";
+import {NotebookConfig} from "./Notebook";
+import {NoticeConfig} from "./Notice";
+import {NPCConfig} from "./NPC";
+import {PaintingStyleConfig} from "./PaintingStyle";
+import {PassEndingConfig} from "./PassEnding";
+import {PlayerExpConfig} from "./PlayerExp";
+import {PopularExpConfig} from "./PopularExp";
+import {PrizePoolConfig} from "./PrizePool";
+import {RecommendedConfig} from "./Recommended";
+import {RefreshPackConfig} from "./RefreshPack";
+import {RefreshPointConfig} from "./RefreshPoint";
+import {ReportConfig} from "./Report";
+import {SceneRefreshPropsConfig} from "./SceneRefreshProps";
+import {ShopInstanceConfig} from "./ShopInstance";
+import {ShopLabelConfig} from "./ShopLabel";
+import {ShopConfig} from "./Shop";
+import {SoundConfig} from "./Sound";
+import {SubGhostAttackConfig} from "./SubGhostAttack";
+import {SubGhostGraphicConfig} from "./SubGhostGraphic";
+import {SubGhostConfig} from "./SubGhost";
+import {SubGlobalConfig} from "./SubGlobal";
+import {SubItemConfig} from "./SubItem";
+import {SubLanguageConfig} from "./SubLanguage";
+import {SubPassEndingConfig} from "./SubPassEnding";
+import {TalkConfig} from "./Talk";
+import {TransItemConfig} from "./TransItem";
+import {TreasureBoxConfig} from "./TreasureBox";
+import {WeaponSkinConfig} from "./WeaponSkin";
+
+export class GameConfig{
+	private static configMap:Map<string, ConfigBase<IElementBase>> = new Map();
+	/**
+	* 多语言设置
+	* @param languageIndex 语言索引(-1为系统默认语言)
+	* @param getLanguageFun 根据key获取语言内容的方法
+	*/
+	public static initLanguage(languageIndex:number, getLanguageFun:(key:string|number)=>string){
+		ConfigBase.initLanguage(languageIndex, getLanguageFun);
+		this.configMap.clear();
+	}
+	public static getConfig<T extends ConfigBase<IElementBase>>(ConfigClass: { new(): T }): T {
+		if (!this.configMap.has(ConfigClass.name)) {
+			this.configMap.set(ConfigClass.name, new ConfigClass());
+		}
+		return this.configMap.get(ConfigClass.name) as T;
+	}
+	public static get AchievementLevel():AchievementLevelConfig{ return this.getConfig(AchievementLevelConfig) };
+	public static get Achievement():AchievementConfig{ return this.getConfig(AchievementConfig) };
+	public static get ActiveValue():ActiveValueConfig{ return this.getConfig(ActiveValueConfig) };
+	public static get Alternate():AlternateConfig{ return this.getConfig(AlternateConfig) };
+	public static get AvatarFrame():AvatarFrameConfig{ return this.getConfig(AvatarFrameConfig) };
+	public static get BuffEx():BuffExConfig{ return this.getConfig(BuffExConfig) };
+	public static get Buff():BuffConfig{ return this.getConfig(BuffConfig) };
+	public static get Bullet():BulletConfig{ return this.getConfig(BulletConfig) };
+	public static get CheckIn():CheckInConfig{ return this.getConfig(CheckInConfig) };
+	public static get Difficulty():DifficultyConfig{ return this.getConfig(DifficultyConfig) };
+	public static get DropItem():DropItemConfig{ return this.getConfig(DropItemConfig) };
+	public static get Find():FindConfig{ return this.getConfig(FindConfig) };
+	public static get GameTheme():GameThemeConfig{ return this.getConfig(GameThemeConfig) };
+	public static get GhostAttack():GhostAttackConfig{ return this.getConfig(GhostAttackConfig) };
+	public static get GhostBossDifficult():GhostBossDifficultConfig{ return this.getConfig(GhostBossDifficultConfig) };
+	public static get GhostDay():GhostDayConfig{ return this.getConfig(GhostDayConfig) };
+	public static get GhostFragment():GhostFragmentConfig{ return this.getConfig(GhostFragmentConfig) };
+	public static get GhostGraphic():GhostGraphicConfig{ return this.getConfig(GhostGraphicConfig) };
+	public static get GhostGraph():GhostGraphConfig{ return this.getConfig(GhostGraphConfig) };
+	public static get GhostInstance():GhostInstanceConfig{ return this.getConfig(GhostInstanceConfig) };
+	public static get Ghost():GhostConfig{ return this.getConfig(GhostConfig) };
+	public static get Gift():GiftConfig{ return this.getConfig(GiftConfig) };
+	public static get Global():GlobalConfig{ return this.getConfig(GlobalConfig) };
+	public static get GuideTalk():GuideTalkConfig{ return this.getConfig(GuideTalkConfig) };
+	public static get happyCoin():happyCoinConfig{ return this.getConfig(happyCoinConfig) };
+	public static get HomeWeather():HomeWeatherConfig{ return this.getConfig(HomeWeatherConfig) };
+	public static get HotWeapon():HotWeaponConfig{ return this.getConfig(HotWeaponConfig) };
+	public static get Interact():InteractConfig{ return this.getConfig(InteractConfig) };
+	public static get ItemLevelProperty():ItemLevelPropertyConfig{ return this.getConfig(ItemLevelPropertyConfig) };
+	public static get ItemLevel():ItemLevelConfig{ return this.getConfig(ItemLevelConfig) };
+	public static get ItemMaterial():ItemMaterialConfig{ return this.getConfig(ItemMaterialConfig) };
+	public static get ItemNeeds():ItemNeedsConfig{ return this.getConfig(ItemNeedsConfig) };
+	public static get ItemQuality():ItemQualityConfig{ return this.getConfig(ItemQualityConfig) };
+	public static get Item():ItemConfig{ return this.getConfig(ItemConfig) };
+	public static get Json():JsonConfig{ return this.getConfig(JsonConfig) };
+	public static get Language():LanguageConfig{ return this.getConfig(LanguageConfig) };
+	public static get MeleeWeapon():MeleeWeaponConfig{ return this.getConfig(MeleeWeaponConfig) };
+	public static get Mission():MissionConfig{ return this.getConfig(MissionConfig) };
+	public static get Notebook():NotebookConfig{ return this.getConfig(NotebookConfig) };
+	public static get Notice():NoticeConfig{ return this.getConfig(NoticeConfig) };
+	public static get NPC():NPCConfig{ return this.getConfig(NPCConfig) };
+	public static get PaintingStyle():PaintingStyleConfig{ return this.getConfig(PaintingStyleConfig) };
+	public static get PassEnding():PassEndingConfig{ return this.getConfig(PassEndingConfig) };
+	public static get PlayerExp():PlayerExpConfig{ return this.getConfig(PlayerExpConfig) };
+	public static get PopularExp():PopularExpConfig{ return this.getConfig(PopularExpConfig) };
+	public static get PrizePool():PrizePoolConfig{ return this.getConfig(PrizePoolConfig) };
+	public static get Recommended():RecommendedConfig{ return this.getConfig(RecommendedConfig) };
+	public static get RefreshPack():RefreshPackConfig{ return this.getConfig(RefreshPackConfig) };
+	public static get RefreshPoint():RefreshPointConfig{ return this.getConfig(RefreshPointConfig) };
+	public static get Report():ReportConfig{ return this.getConfig(ReportConfig) };
+	public static get SceneRefreshProps():SceneRefreshPropsConfig{ return this.getConfig(SceneRefreshPropsConfig) };
+	public static get ShopInstance():ShopInstanceConfig{ return this.getConfig(ShopInstanceConfig) };
+	public static get ShopLabel():ShopLabelConfig{ return this.getConfig(ShopLabelConfig) };
+	public static get Shop():ShopConfig{ return this.getConfig(ShopConfig) };
+	public static get Sound():SoundConfig{ return this.getConfig(SoundConfig) };
+	public static get SubGhostAttack():SubGhostAttackConfig{ return this.getConfig(SubGhostAttackConfig) };
+	public static get SubGhostGraphic():SubGhostGraphicConfig{ return this.getConfig(SubGhostGraphicConfig) };
+	public static get SubGhost():SubGhostConfig{ return this.getConfig(SubGhostConfig) };
+	public static get SubGlobal():SubGlobalConfig{ return this.getConfig(SubGlobalConfig) };
+	public static get SubItem():SubItemConfig{ return this.getConfig(SubItemConfig) };
+	public static get SubLanguage():SubLanguageConfig{ return this.getConfig(SubLanguageConfig) };
+	public static get SubPassEnding():SubPassEndingConfig{ return this.getConfig(SubPassEndingConfig) };
+	public static get Talk():TalkConfig{ return this.getConfig(TalkConfig) };
+	public static get TransItem():TransItemConfig{ return this.getConfig(TransItemConfig) };
+	public static get TreasureBox():TreasureBoxConfig{ return this.getConfig(TreasureBoxConfig) };
+	public static get WeaponSkin():WeaponSkinConfig{ return this.getConfig(WeaponSkinConfig) };
+}

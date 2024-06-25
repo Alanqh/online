@@ -1,0 +1,35 @@
+﻿{
+	"name": "超正常医院(无限恐怖) - 233派对",
+	"packageName": "1853ABE54EB451ECF59D248CEAB5383F",
+	"foldername": "Infection",
+	"mainScene": 0,
+	"scenePublic": 0,
+	"intro": "修改ui",
+	"notes": "修改ui",
+	"editorVersion": "v0.34.0.3",
+	"parentGameIdentity": "",
+	"parentGameId": "",
+	"extra": "{\"attribute\":2,\"IsHorizontal\":true,\"useAvatar\":0}",
+	"devEnv": 4,
+	"needToMgs": 0,
+	"attribute": 2,
+	"autoSubmitAudit": false,
+	"ignore": [
+		"game.desc",
+		"Asset_Data_List"
+	],
+	"files": [
+		{
+			"type": "Game_Thumbnail",
+			"path": "Pictures/Game_Thumbnail.jpg"
+		},
+		{
+			"type": "GameSetting",
+			"path": "Config/GameSetting.ini"
+		},
+		{
+			"type": "Asset_Data_List",
+			"path": "Asset_Data_List"
+		}
+	]
+}

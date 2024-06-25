@@ -1,0 +1,60 @@
+import { ConfigBase, IElementBase } from "./ConfigBase";
+const EXCELDATA:Array<Array<any>> = [["id","Desc","ghostId","diffcult","casualSpeed","chaseSpeed","shining","existChaseDist","existChaseTime","chaseCD","safePlace","sightRange","sightRangeInCD","specialCheck","goodMed","checkCom","isHang2Player","hangParams","hangCom","chaseParams","chaseCom","isMoveChar","attackMode","atkRate","dropItemId"],["","","","","","","","","","","","","","","","","","","","","","","","",""],[1000,"普通难度帕姆尼1",1,[1],100,120,false,1200,20,20,["bed","cupboard"],[1200,60],[300,30],[[1,3000]],["2"],[1,2],10,null,1,null,1,1,1,0,0],[1001,"普通难度帕姆尼2",1,[2],100,150,true,1500,20,20,["bed","cupboard"],[1300,60],[300,30],[[1,3000]],["2"],[1,2],10,null,1,null,1,1,1,0,0],[1002,"普通难度帕姆尼3",1,[3],100,180,true,1700,20,20,["bed","cupboard"],[1400,60],[300,30],[[1,3000]],["2"],[1,2],10,null,1,null,1,1,1,0,0],[1003,"普通难度帕姆尼4",1,[4],100,200,true,2000,20,20,["bed","cupboard"],[1500,60],[300,30],[[1,3000]],["2"],[1,2],10,null,1,null,1,1,1,0,0],[1004,"普通难度帕姆尼5",1,[5],5000,350,true,2000,20,20,["bed","cupboard"],[1500,60],[300,30],[[1,3000]],["2"],[1,2],10,null,1,null,1,1,1,0,0],[2000,"看着不动的帕姆尼",2,[1,2,3,4,5],100,400,false,5000,25,0,["bed","cupboard"],[1500,270],[3,30],[[1,3000]],null,[3],0,null,3,["25944BE2"],2,1,1,0,0],[3000,"闪缩的帕姆尼",3,[1,2,3,4,5],100,200,false,500,25,0,["bed","cupboard"],[1500,270],[3,30],[[1,3000]],null,null,0,["3E39989C","13ACCBA6","5"],5,null,1,1,4,0,0],[4000,"哭泣帕姆尼",4,[1,2,3,4,5],0,200,false,300,15,0,["bed","cupboard"],[200,360],[3,30],[[1,200]],["2"],[1,2],0,null,1,null,1,1,1,1,0],[5000,"爬行帕姆尼",5,[1,2,3,4,5],100,100,false,250,30,20,["bed","cupboard"],[400,360],[3,30],[[1,200],[22]],["2"],[1,4],0,null,1,null,1,1,1,1,0]];
+export interface IGhostElement extends IElementBase{
+ 	/**id*/
+	id:number
+	/**备注*/
+	Desc:string
+	/**鬼的id（真实鬼的ID，用于鬼的示例配置）*/
+	ghostId:number
+	/**难度区分（填写后对应的难度会读取对应的配置）*/
+	diffcult:Array<number>
+	/**休闲态速度（S）*/
+	casualSpeed:number
+	/**追击速度（C为准）(S计算)*/
+	chaseSpeed:number
+	/**是否闪灵（C）*/
+	shining:boolean
+	/**离开追击距离（C）*/
+	existChaseDist:number
+	/**离开追击时间（C为准）(S计算)*/
+	existChaseTime:number
+	/**追击结束cd（C为准）(S计算)*/
+	chaseCD:number
+	/**有效的安全区（C）*/
+	safePlace:Array<string>
+	/**视线范围（C）*/
+	sightRange:Array<number>
+	/**CD期间视线范围（C）*/
+	sightRangeInCD:Array<number>
+	/**特殊检测范围*/
+	specialCheck:Array<Array<number>>
+	/**好药*/
+	goodMed:Array<string>
+	/**检测组件（1为普通的视线检测，2为药物检测(嗑药状态|检测范围)）*/
+	checkCom:Array<number>
+	/**是否需要追踪玩家*/
+	isHang2Player:number
+	/**闲逛特殊参数*/
+	hangParams:Array<string>
+	/**闲逛组件（1为基础巡逻逻辑，2为有手推车的巡逻逻辑（推车检测范围））*/
+	hangCom:number
+	/**追击组件*/
+	chaseParams:Array<string>
+	/**追击组件（1为直接跟着过去）*/
+	chaseCom:number
+	/**攻击的时候是被拉过去（1），还是过来处决（0）*/
+	isMoveChar:number
+	/**攻击模式（1为触碰击杀）*/
+	attackMode:number
+	/**攻击伤害倍率*/
+	atkRate:number
+	/**关联掉落物配置*/
+	dropItemId:number
+ } 
+export class GhostConfig extends ConfigBase<IGhostElement>{
+	constructor(){
+		super(EXCELDATA);
+	}
+
+}

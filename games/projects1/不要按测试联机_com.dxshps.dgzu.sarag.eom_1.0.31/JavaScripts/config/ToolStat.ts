@@ -1,0 +1,127 @@
+import { ConfigBase, IElementBase } from "./ConfigBase";
+const EXCELDATA:Array<Array<any>> = [["id","content","name","icon","color","model","modelType","bindModel","bindModelType","bindModelScale","showPos","showRot","showScale","petPos","petRot","petScale","humanAction","humanActionRate","humanPoint","humanPos","humanRot","humanScale","aimType","projectionSpeed","projectionGravity","projectionDensity","count","secondUse","time","impulse","range","useEffectPet","useEffectPetPos","useEffectPetRot","useEffectPetScale","useEffectHuman","useEffectHumanPos","useEffectHumanRot","useEffectHumanScale","useEffectHumanPoint","hitEffectPet","hitEffectPetPos","hitEffectPetRot","hitEffectPetScale","hitEffectHuman","hitEffectHumanPos","hitEffectHumanRot","hitEffectHumanScale","hitEffectHumanPoint","hitRecoverId","useSound","hitSound"],["","","Language","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","",""],[10001,"冲击波","ToolStat_name_10001","133401","E467FFFF","8DD988D84640924E6F9BB8A658EDD6D0",2,null,0,null,new mw.Vector(0,0,-20),new mw.Vector(0,0,0),new mw.Vector(1,1,1),new mw.Vector(0,0,0),new mw.Vector(0,0,0),new mw.Vector(1,1,1),"20287",1,16,new mw.Vector(0,0,0),new mw.Vector(0,0,-10),new mw.Vector(1,1,1),0,0,0,0,3,false,0,500,200,"287115",new mw.Vector(0,20,25),new mw.Vector(0,90,0),new mw.Vector(0.2,0.4,0.4),"287115",new mw.Vector(5,0,120),new mw.Vector(0,0,0),new mw.Vector(0.2,0.4,0.4),23,"99609",new mw.Vector(0,0,20),new mw.Vector(0,0,0),new mw.Vector(1,1,1),"99609",new mw.Vector(0,0,0),new mw.Vector(0,0,0),new mw.Vector(1,1,1),23,null,60001,0],[10002,"泡泡枪","ToolStat_name_10002","130249","5FDEB9FF","73D832974C9A4DF9C2BA66AD37CC4724",2,"F18FAB6F4F3CB76B6C98B9956A5A9554",2,new mw.Vector(2.4,2.4,2.4),new mw.Vector(0,-5,10),new mw.Vector(0,0,0),new mw.Vector(1.4,1.4,1.4),new mw.Vector(0,0,10),new mw.Vector(0,0,0),new mw.Vector(1.4,1.4,1.4),"80589",0.7,16,new mw.Vector(17,-2,17),new mw.Vector(0,-90,0),new mw.Vector(1.4,1.4,1.4),2,900,0,0,1,false,3,0,0,null,null,null,null,null,null,null,null,0,"287126",new mw.Vector(0,0,0),new mw.Vector(0,0,0),new mw.Vector(1,1,1),"287126",new mw.Vector(0,0,0),new mw.Vector(0,0,0),new mw.Vector(1,1,1),23,[10003,10001],60002,60003],[10003,"加速饮料","ToolStat_name_10003","163389","F6C058FF","1703E44648B4765EFB03208D8B3203FF",2,null,0,null,new mw.Vector(0,0,-20),new mw.Vector(0,0,0),new mw.Vector(1,1,1),new mw.Vector(0,0,0),new mw.Vector(0,0,0),new mw.Vector(1,1,1),"84913",1.5,16,new mw.Vector(10,0,3),new mw.Vector(0,0,0),new mw.Vector(1,1,1),0,0,0,0,1,false,3,400,0,null,null,null,null,null,null,null,null,0,"888E657B48326DDBA98ECE9A8382152C",new mw.Vector(0,0,0),new mw.Vector(0,0,0),new mw.Vector(1,1,1),"888E657B48326DDBA98ECE9A8382152C",new mw.Vector(0,0,110),new mw.Vector(0,0,0),new mw.Vector(1,1,1),23,null,60004,0],[10004,"传送方块","ToolStat_name_10004","213371","67A6F6FF","5DA75CA24EFC470A3622E3A1838175E4",2,"5DA75CA24EFC470A3622E3A1838175E4",2,new mw.Vector(0.28,0.28,0.28),new mw.Vector(0,0,-14),new mw.Vector(0,0,0),new mw.Vector(0.28,0.28,0.28),new mw.Vector(0,0,0),new mw.Vector(0,0,0),new mw.Vector(0.28,0.28,0.28),"84862",0.7,16,new mw.Vector(15,0,3),new mw.Vector(0,0,0),new mw.Vector(0.28,0.28,0.28),1,1800,2.5,50,1,true,5,0,600,null,null,null,null,"174250",new mw.Vector(0,0,15),new mw.Vector(0,0,0),new mw.Vector(1.5,1.5,1.5),0,"287248",new mw.Vector(0,0,-15),new mw.Vector(0,0,0),new mw.Vector(1,1,1),"287248",new mw.Vector(0,0,0),new mw.Vector(0,0,0),new mw.Vector(1,1,1),23,null,60005,60006],[10005,"河豚","ToolStat_name_10005","135933","FFE375FF","178141",0,"178141",0,new mw.Vector(4,4,4),new mw.Vector(0,0,0),new mw.Vector(0,0,0),new mw.Vector(1.5,1.5,1.5),new mw.Vector(0,0,0),new mw.Vector(0,0,0),new mw.Vector(1.5,1.5,1.5),"20287",1,16,new mw.Vector(40,0,0),new mw.Vector(0,0,90),new mw.Vector(1.5,1.5,1.5),2,900,0,0,1,false,3,0,0,null,null,null,null,null,null,null,null,0,"151576",new mw.Vector(0,0,50),new mw.Vector(0,0,0),new mw.Vector(1.5,1.5,1.5),"151576",new mw.Vector(0,0,0),new mw.Vector(0,0,0),new mw.Vector(0,0,0),23,[10003,10001],60002,60003],[10006,"雪球","ToolStat_name_10006","159413","7DF0FFFF","90C304704858DAFAD4026AAA0CC5004D",2,"9564AF264A6C714127C78EA47114638B",2,new mw.Vector(2,2,2),new mw.Vector(0,0,0),new mw.Vector(0,0,0),new mw.Vector(1,1,1),new mw.Vector(0,0,0),new mw.Vector(0,0,0),new mw.Vector(1,1,1),"20287",1,16,new mw.Vector(0,0,0),new mw.Vector(0,0,0),new mw.Vector(1,1,1),2,1100,0,0,1,false,2.5,0,300,null,null,null,null,null,null,null,null,0,"168952",new mw.Vector(0,0,0),new mw.Vector(0,0,0),new mw.Vector(1,1,1),null,null,null,null,0,[10008,10007],60002,60003],[10007,"炸弹","ToolStat_name_10007",null,null,null,0,null,0,null,null,null,null,null,null,null,null,0,0,null,null,null,0,0,0,0,1,false,0,500,400,null,null,null,null,null,null,null,null,0,null,null,null,null,null,null,null,null,0,null,0,0],[10008,"火箭","ToolStat_name_10008",null,null,null,0,null,0,null,null,null,null,null,null,null,null,0,0,null,null,null,0,0,0,0,0,null,0,0,0,null,null,null,null,null,null,null,null,0,null,null,null,null,null,null,null,null,0,null,0,0],[10009,"丢弹板","ToolStat_name_10009",null,null,null,0,null,0,null,null,null,null,null,null,null,null,0,0,null,null,null,0,0,0,0,1,false,5,300,0,null,null,null,null,null,null,null,null,0,null,null,null,null,null,null,null,null,0,null,0,0]];
+export interface IToolStatElement extends IElementBase{
+ 	/**序号*/
+	id:number
+	/**名称策划看*/
+	content:string
+	/**道具名称*/
+	name:string
+	/**ui图片*/
+	icon:string
+	/**ui背景颜色*/
+	color:string
+	/**道具模型*/
+	model:string
+	/**模型类型
+0：资源库对象
+1：场景对象
+2：预制体对象*/
+	modelType:number
+	/**绑定投掷模型（投掷类）*/
+	bindModel:string
+	/**绑定模型类型
+0：资源库对象
+1：场景对象
+2：预制体对象*/
+	bindModelType:number
+	/**投掷模型缩放*/
+	bindModelScale:mw.Vector
+	/**展示偏移*/
+	showPos:mw.Vector
+	/**展示旋转*/
+	showRot:mw.Vector
+	/**展示缩放*/
+	showScale:mw.Vector
+	/**宠物装备偏移*/
+	petPos:mw.Vector
+	/**宠物装备旋转*/
+	petRot:mw.Vector
+	/**宠物装备缩放*/
+	petScale:mw.Vector
+	/**人类使用动作*/
+	humanAction:string
+	/**人类动作速率*/
+	humanActionRate:number
+	/**人类装备挂点*/
+	humanPoint:number
+	/**人类装备偏移*/
+	humanPos:mw.Vector
+	/**人类装备旋转*/
+	humanRot:mw.Vector
+	/**人类装备缩放*/
+	humanScale:mw.Vector
+	/**瞄准种类
+0：不需要瞄准
+1：抛物线发射
+2：水平发射*/
+	aimType:number
+	/**投射物速度*/
+	projectionSpeed:number
+	/**抛物线弧度
+（投掷物重力倍率）*/
+	projectionGravity:number
+	/**抛物线圆点密度*/
+	projectionDensity:number
+	/**使用次数*/
+	count:number
+	/**是否有二次使用
+0：无
+1：有*/
+	secondUse:boolean
+	/**道具持续时间*/
+	time:number
+	/**数值*/
+	impulse:number
+	/**范围*/
+	range:number
+	/**宠物使用特效*/
+	useEffectPet:string
+	/**宠物使用特效偏移*/
+	useEffectPetPos:mw.Vector
+	/**宠物使用特效旋转*/
+	useEffectPetRot:mw.Vector
+	/**宠物使用特效缩放*/
+	useEffectPetScale:mw.Vector
+	/**人类使用特效*/
+	useEffectHuman:string
+	/**人类使用特效偏移*/
+	useEffectHumanPos:mw.Vector
+	/**人类使用特效旋转*/
+	useEffectHumanRot:mw.Vector
+	/**人类使用特效缩放*/
+	useEffectHumanScale:mw.Vector
+	/**人类使用特效挂点*/
+	useEffectHumanPoint:number
+	/**宠物命中特效*/
+	hitEffectPet:string
+	/**宠物命中特效偏移*/
+	hitEffectPetPos:mw.Vector
+	/**宠物命中特效旋转*/
+	hitEffectPetRot:mw.Vector
+	/**宠物命中特效缩放*/
+	hitEffectPetScale:mw.Vector
+	/**人类命中特效*/
+	hitEffectHuman:string
+	/**人类命中特效偏移*/
+	hitEffectHumanPos:mw.Vector
+	/**人类命中特效旋转*/
+	hitEffectHumanRot:mw.Vector
+	/**人类命中特效缩放*/
+	hitEffectHumanScale:mw.Vector
+	/**人类命中特效挂点*/
+	hitEffectHumanPoint:number
+	/**受击恢复表id（没有不填）
+宠物|玩家*/
+	hitRecoverId:Array<number>
+	/**音效1（使用时）*/
+	useSound:number
+	/**音效2（触发时）*/
+	hitSound:number
+ } 
+export class ToolStatConfig extends ConfigBase<IToolStatElement>{
+	constructor(){
+		super(EXCELDATA);
+	}
+
+}

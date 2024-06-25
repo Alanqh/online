@@ -1,0 +1,87 @@
+import { ConfigBase, IElementBase } from "./ConfigBase";
+const EXCELDATA:Array<Array<any>> = [["id","des","name","Text","Price","pickType","Type","guid","GeneratePropScale","GeneratePropRotate","GeneratePropDeviation","PropScale","PropRotate","PropDeviation","guid2","Slot","initial","use","useaction","useicon","EffectID","EffldScale","EffldRotate","EffldDeviation","Music","getMusic","icon","value","Count","DayType"],["","","Language","Language","","","","","","","","","","","","","","","","","","","","","","","","","",""],[1,"奶茶","Prop_name_1","PropName_Text_1",0,1,1,"27824",new mw.Vector(6,6,6),new mw.Vector(0,0,0),new mw.Vector(0,0,0),new mw.Vector(1.2,1.2,1.2),new mw.Vector(0,0,0),new mw.Vector(1,-2,-4),null,16,8,1,31,168563,14,null,null,null,22,12,0,"5",2,0],[2,"饮料","Prop_name_2","PropName_Text_2",0,1,1,"27828",new mw.Vector(4,4,4),new mw.Vector(0,0,0),new mw.Vector(0,0,0),new mw.Vector(1.5,1.5,1.5),new mw.Vector(0,0,0),new mw.Vector(1,-2,-6),null,16,8,1,31,168563,14,null,null,null,22,12,0,"5",2,0],[3,"西瓜","Prop_name_3","PropName_Text_3",0,1,1,"174936",new mw.Vector(2,2,2),new mw.Vector(0,0,0),new mw.Vector(0,0,0),new mw.Vector(1,1,1),new mw.Vector(16.7,91,0),new mw.Vector(20,-18,0),null,16,33,1,69,168563,14,null,null,null,8,12,0,"5",2,0],[4,"香蕉","Prop_name_4","PropName_Text_4",0,1,1,"175233",new mw.Vector(3,3,3),new mw.Vector(0,0,0),new mw.Vector(0,0,0),new mw.Vector(1,1,1),new mw.Vector(16.7,91,0),new mw.Vector(5,-5,-2),null,16,9,1,69,168563,14,null,null,null,8,12,0,"5",2,0],[5,"卷心菜","Prop_name_5","PropName_Text_5",0,1,1,"125353",new mw.Vector(2,2,2),new mw.Vector(0,0,0),new mw.Vector(0,0,0),new mw.Vector(1,1,1),new mw.Vector(15,-8,85),new mw.Vector(10,0,0),null,16,8,1,69,168563,14,null,null,null,8,12,0,"5",2,0],[6,"萝卜","Prop_name_6","PropName_Text_6",0,1,1,"125354",new mw.Vector(2,2,2),new mw.Vector(0,0,0),new mw.Vector(0,0,0),new mw.Vector(1,1,1),new mw.Vector(15,-8,86),new mw.Vector(7,7,-25),null,16,8,1,69,168563,14,null,null,null,8,12,0,"5",2,0],[7,"西红柿","Prop_name_7","PropName_Text_7",0,1,1,"175133",new mw.Vector(6,6,6),new mw.Vector(0,0,0),new mw.Vector(0,0,0),new mw.Vector(1.5,1.5,1.5),new mw.Vector(15,-8,86),new mw.Vector(2,-7,-5),null,16,8,1,69,168563,14,null,null,null,8,12,0,"5",2,0],[8,"鱼罐头","Prop_name_8","PropName_Text_8",0,1,1,"29001",new mw.Vector(3,3,3),new mw.Vector(0,0,0),new mw.Vector(0,0,0),new mw.Vector(1,1,1),new mw.Vector(15,-8,86),new mw.Vector(2,-7,-2),null,16,8,1,31,168563,14,null,null,null,8,12,0,"5",2,0],[9,"麦片","Prop_name_9","PropName_Text_9",0,1,1,"85727",new mw.Vector(2,2,2),new mw.Vector(0,0,0),new mw.Vector(0,0,0),new mw.Vector(1,1,1),new mw.Vector(0,0,0),new mw.Vector(0,0,0),null,16,8,1,31,168563,14,null,null,null,8,12,0,"5",2,0],[10,"面包","Prop_name_10","PropName_Text_10",0,1,1,"46126",new mw.Vector(0.4,0.4,0.4),new mw.Vector(0,0,0),new mw.Vector(0,0,0),new mw.Vector(0.2,0.2,0.2),new mw.Vector(0,0,0),new mw.Vector(0,0,0),null,16,8,1,69,168563,14,null,null,null,8,12,0,"5",2,0]];
+export interface IPropElement extends IElementBase{
+ 	/**唯一id*/
+	id:number
+	/**备注*/
+	des:string
+	/**介绍*/
+	name:string
+	/**名字*/
+	Text:string
+	/**所需金币*/
+	Price:number
+	/**拾取类别
+0：拾取后即消耗
+1：拾取后可使用*/
+	pickType:number
+	/**道具类别
+0：直接消耗获得乐园币
+1：拾取后使用回血
+2：拾取后装备装饰
+3：锤子——砸南瓜头
+4：定身符
+5：保命符
+6：装备南瓜头
+7：增加玩家移动速度
+8： 开启二段跳
+9：体型缩小 
+10：取消玩家的碰撞*/
+	Type:number
+	/**预加载资源id*/
+	guid:string
+	/**生成道具缩放*/
+	GeneratePropScale:mw.Vector
+	/**生成道具旋转*/
+	GeneratePropRotate:mw.Vector
+	/**生成道具位置偏移*/
+	GeneratePropDeviation:mw.Vector
+	/**道具缩放*/
+	PropScale:mw.Vector
+	/**道具旋转*/
+	PropRotate:mw.Vector
+	/**道具位置偏移*/
+	PropDeviation:mw.Vector
+	/**预制体id*/
+	guid2:string
+	/**挂点插槽*/
+	Slot:number
+	/**默认动画/姿态*/
+	initial:number
+	/**0：无需弹出按钮使用
+1：需要弹出按钮使用*/
+	use:number
+	/**使用按钮时播放动画*/
+	useaction:number
+	/**使用按钮icon*/
+	useicon:number
+	/**特效id*/
+	EffectID:number
+	/**特效缩放*/
+	EffldScale:mw.Vector
+	/**特效旋转*/
+	EffldRotate:mw.Vector
+	/**特效位置偏移*/
+	EffldDeviation:mw.Vector
+	/**音效（音效表id）*/
+	Music:number
+	/**拾取音效（音效表id）*/
+	getMusic:number
+	/**图片*/
+	icon:number
+	/**回血、获得金币的数值*/
+	value:string
+	/**生成数量*/
+	Count:number
+	/**刷新时间类型
+0=白天刷新
+1=夜晚刷新
+2=都刷*/
+	DayType:number
+ } 
+export class PropConfig extends ConfigBase<IPropElement>{
+	constructor(){
+		super(EXCELDATA);
+	}
+
+}

@@ -1,0 +1,3 @@
+# note_const.py
+class NoteConst:
+    Magic = bytes([0xbe, 0xda, 0xb0, 0x1d])

@@ -1,0 +1,7 @@
+{
+	"name": "RealNameVerifyService",
+	"version": "1.0.0",
+	"author": "huipeng.jia",
+	"enable": true,
+	"description": "RealName Verify Service"
+}

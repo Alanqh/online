@@ -1,0 +1,35 @@
+﻿{
+	"name": "糖豆-测试大厅",
+	"packageName": "7A1B855A47B67DCDE77F68A11EF287BC",
+	"intro": "测试大厅",
+	"notes": "测试大厅",
+	"editorVersion": "v0.28.0.0",
+	"parentGameIdentity": "",
+	"parentGameId": "",
+	"extra": "{\"attribute\":2,\"IsHorizontal\":true,\"useAvatar\":0}",
+	"devEnv": 4,
+	"needToMgs": 0,
+	"attribute": 2,
+	"autoSubmitAudit": false,
+	"ignore": [
+		"game.desc",
+		"Asset_Data_List"
+	],
+	"files": [
+		{
+			"type": "Game_Thumbnail",
+			"path": "Pictures/Game_Thumbnail.jpg"
+		},
+		{
+			"type": "GameSetting",
+			"path": "Config/GameSetting.ini"
+		},
+		{
+			"type": "Asset_Data_List",
+			"path": "Asset_Data_List"
+		}
+	],
+	"foldername": "LV28",
+	"mainScene": 0,
+	"scenePublic": 0
+}

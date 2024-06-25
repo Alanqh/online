@@ -1,0 +1,134 @@
+import { ConfigBase, IElementBase } from "./ConfigBase";
+const EXCELDATA:Array<Array<any>> = [["id","content","SkyGUID","SkyBright","SkyColor","SkyTopColor","SkyUpColor","SkyBottomColor","Skyline","IsStarsOpen","StarsDUID","StarsBright","StarsDensity","IsSunOpen","SunGUID","SunBright","SunColor","SunSize","IsMoonOpen","MoonGUID","MoonBright","MoonColor","MoonSize","IsCloudOpen","CloudGUID","CloudTransparent","CloudColor","CloudDensity","CloudSpeed","OrientationAngle","PitchingAngle","DirectionaIntensity","DirectionaColor","IsColorTempOpen","ColorTemp","SLMap","SLBrightness","SLColor","ExposureCompensation","IsShadow","ShadowDistance","ColorDeviationValue","FogEnable","FogDensity","FogHeightDebility","FogHeight","FogColor","FogDiaphaneity","StartDistance","SunLightScattering","SunLightScatteringDistance","SunLightScatteringColor","Bloom","GlobalSaturation","GlobalContrast"],["","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","",""],[1001,"默认光照",null,1,"FFFFFFFF","6492FFFF","9BE7FFFF","C6F6FFFF",5,true,"14307",0.6,8,true,"184493",30,"FFC4C4FF",10,false,null,0,null,0,true,"28450",0.9,"FFFFFFFF",1,1,-20,-50,5,"FFF2C900",false,0,"64154",1.5,"EAF9FF00",0,1,4000,"FFFFFFFF",false,0,0,0,null,0,0,0,0,null,1,1.2,1],[1002,"新春光照","59820",1.5,"FFFFFFFF","6469C6FF","E1B8C3FF","FFCC9BFF",3,false,"14307",1,10,true,null,20,"FFE39CFF",6,false,null,1,"FFFFFFFF",10,true,"28450",0.5,"FFC495FF",1,0.5,-40,-50,6,"FFF2C900",false,4000,"64154",1.5,"EAF9FF00",0,1,2800,"EEDBDBFF",true,0.05,0.8,0,"FFEFA9FF",0.5,500,4,10000,"000000FF",1,1.2,1],[1003,"极光","210849",1,"FFFFFFFF","6492FFFF","9BE7FFFF","C6F6FFFF",5,true,null,0.6,8,true,null,30,"FFC4C4FF",10,false,null,1,"FFFFFFFF",10,true,"28450",0.9,"FFFFFFFF",1,1,-55,-50,2,"FFF2C900",false,6500,"64154",1.5,"EAF9FF00",0,1,4000,"FFFFFFFF",false,0,0,0,null,0,0,0,0,null,1,1.2,1],[1004,null,null,0,null,null,null,null,0,null,null,0,0,null,null,0,null,0,null,null,0,null,0,null,null,0,null,0,0,0,0,0,null,null,0,null,0,null,0,0,0,null,null,0,0,0,null,0,0,0,0,null,0,0,0]];
+export interface ILightElement extends IElementBase{
+ 	/**序号*/
+	id:number
+	/**名称*/
+	content:string
+	/**天空盒贴图GUID*/
+	SkyGUID:string
+	/**天空盒亮度*/
+	SkyBright:number
+	/**天空盒颜色*/
+	SkyColor:string
+	/**天空盒顶层颜色*/
+	SkyTopColor:string
+	/**天空盒上层颜色*/
+	SkyUpColor:string
+	/**天空盒下层颜色*/
+	SkyBottomColor:string
+	/**地平线渐出*/
+	Skyline:number
+	/**是否开启星星
+0=关闭
+1=开启*/
+	IsStarsOpen:boolean
+	/**星星贴图*/
+	StarsDUID:string
+	/**星星亮度*/
+	StarsBright:number
+	/**星星密度*/
+	StarsDensity:number
+	/**是否开启太阳
+0=关闭
+1=开启*/
+	IsSunOpen:boolean
+	/**太阳贴图*/
+	SunGUID:string
+	/**太阳亮度*/
+	SunBright:number
+	/**太阳颜色*/
+	SunColor:string
+	/**太阳大小*/
+	SunSize:number
+	/**是否开启月亮
+0=关闭
+1=开启*/
+	IsMoonOpen:boolean
+	/**月亮贴图*/
+	MoonGUID:string
+	/**月亮亮度*/
+	MoonBright:number
+	/**月亮颜色*/
+	MoonColor:string
+	/**月亮大小*/
+	MoonSize:number
+	/**是否开启云
+0=关闭
+1=开启*/
+	IsCloudOpen:boolean
+	/**云贴图*/
+	CloudGUID:string
+	/**云透明度*/
+	CloudTransparent:number
+	/**云颜色*/
+	CloudColor:string
+	/**云密度*/
+	CloudDensity:number
+	/**云速度*/
+	CloudSpeed:number
+	/**朝向角度*/
+	OrientationAngle:number
+	/**俯仰角度*/
+	PitchingAngle:number
+	/**平行光强度*/
+	DirectionaIntensity:number
+	/**平行光颜色*/
+	DirectionaColor:string
+	/**是否开启色温
+0=关闭
+1=开启*/
+	IsColorTempOpen:boolean
+	/**色温*/
+	ColorTemp:number
+	/**天光贴图Guid*/
+	SLMap:string
+	/**天光强度*/
+	SLBrightness:number
+	/**天光颜色*/
+	SLColor:string
+	/**曝光补偿*/
+	ExposureCompensation:number
+	/**是否开启阴影
+0=关闭
+1=开启*/
+	IsShadow:number
+	/**阴影距离*/
+	ShadowDistance:number
+	/**偏色值*/
+	ColorDeviationValue:string
+	/**是否开启雾
+0=关闭
+1=开启*/
+	FogEnable:boolean
+	/**雾密度*/
+	FogDensity:number
+	/**雾高度衰弱*/
+	FogHeightDebility:number
+	/**雾高度*/
+	FogHeight:number
+	/**雾散射颜色*/
+	FogColor:string
+	/**雾最大透明度*/
+	FogDiaphaneity:number
+	/**起始距离*/
+	StartDistance:number
+	/**太阳光散射指数*/
+	SunLightScattering:number
+	/**太阳光散射初始距离*/
+	SunLightScatteringDistance:number
+	/**太阳光散射颜色*/
+	SunLightScatteringColor:string
+	/**泛光*/
+	Bloom:number
+	/**全局饱和度*/
+	GlobalSaturation:number
+	/**全局对比度*/
+	GlobalContrast:number
+ } 
+export class LightConfig extends ConfigBase<ILightElement>{
+	constructor(){
+		super(EXCELDATA);
+	}
+
+}
